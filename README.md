@@ -30,8 +30,8 @@ whisper-portable/
 ### 1. Clonar este repositorio
 
 ```bash
-git clone https://github.com/smolero/whisper-portable.git
-cd whisper-portable
+git clone git@github.com:tesudacochino/-whisper-portable.git
+cd -- -whisper-portable
 ```
 
 ### 2. Ejecutar el instalador
