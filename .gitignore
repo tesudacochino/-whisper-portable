@@ -1,0 +1,16 @@
+# Faster-Whisper-XXL (motor + modelo ~ 7GB)
+Faster-Whisper-XXL/
+
+# Archivos descargados
+*.7z
+*.zip
+
+# Archivos de entrada y salida (datos del usuario)
+input/*
+output/*
+!input/.gitkeep
+!output/.gitkeep
+
+# Cache de modelos
+.cache/
+__pycache__/
