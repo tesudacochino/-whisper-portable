@@ -2,10 +2,10 @@
 chcp 65001 >nul
 title Whisper Portable - Transcripción de Audio a Texto
 echo.
-echo  ╔══════════════════════════════════════════════════════════╗
-echo  ║          WHISPER PORTABLE - Audio a Texto               ║
-echo  ║          Faster-Whisper-XXL r245.4                      ║
-echo  ╚══════════════════════════════════════════════════════════╝
+echo  +----------------------------------------------------------+
+echo  ^|          WHISPER PORTABLE - Audio a Texto               ^|
+echo  ^|          Faster-Whisper-XXL r245.4                      ^|
+echo  +----------------------------------------------------------+
 echo.
 
 set "SCRIPT_DIR=%~dp0"
@@ -51,13 +51,13 @@ echo  Idioma:  %WHISPER_LANGUAGE%
 echo  Salida:  %OUTPUT_DIR%\%BASENAME%.txt
 echo.
 echo  Procesando... (esto puede tardar unos minutos)
-echo  ════════════════════════════════════════════════════════════
+echo  ============================================================
 echo.
 
 "%WHISPER_EXE%" "%INPUT_FILE%" --model %WHISPER_MODEL% --output_format txt --output_dir "%OUTPUT_DIR%" --device %WHISPER_DEVICE% --compute_type %WHISPER_COMPUTE% %LANG_ARG%
 
 echo.
-echo  ════════════════════════════════════════════════════════════
+echo  ============================================================
 
 if exist "%OUTPUT_DIR%\%BASENAME%.txt" (
     echo  [OK] Transcripción completada!

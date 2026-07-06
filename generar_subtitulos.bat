@@ -2,10 +2,10 @@
 chcp 65001 >nul
 title Whisper Portable - Transcripción con Subtítulos (SRT)
 echo.
-echo  ╔══════════════════════════════════════════════════════════╗
-echo  ║      WHISPER PORTABLE - Generar Subtítulos (SRT)        ║
-echo  ║      Arrastra un archivo de audio/video sobre este bat  ║
-echo  ╚══════════════════════════════════════════════════════════╝
+echo  +----------------------------------------------------------+
+echo  ^|      WHISPER PORTABLE - Generar Subtitulos (SRT)        ^|
+echo  ^|      Arrastra un archivo de audio/video sobre este bat  ^|
+echo  +----------------------------------------------------------+
 echo.
 
 set "SCRIPT_DIR=%~dp0"
@@ -43,13 +43,13 @@ echo  Formato: SRT (subtítulos)
 echo  Idioma:  %WHISPER_LANGUAGE%
 echo.
 echo  Procesando...
-echo  ════════════════════════════════════════════════════════════
+echo  ============================================================
 echo.
 
 "%WHISPER_EXE%" "%INPUT_FILE%" --model %WHISPER_MODEL% --output_format srt --output_dir "%OUTPUT_DIR%" --device %WHISPER_DEVICE% --compute_type %WHISPER_COMPUTE% %LANG_ARG%
 
 echo.
-echo  ════════════════════════════════════════════════════════════
+echo  ============================================================
 
 if exist "%OUTPUT_DIR%\%BASENAME%.srt" (
     echo  [OK] Subtítulos generados!

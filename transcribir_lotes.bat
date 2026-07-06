@@ -2,10 +2,10 @@
 chcp 65001 >nul
 title Whisper Portable - Transcripción por Lotes
 echo.
-echo  ╔══════════════════════════════════════════════════════════╗
-echo  ║       WHISPER PORTABLE - Transcripción por Lotes        ║
-echo  ║       Procesa todos los audios de la carpeta "input"    ║
-echo  ╚══════════════════════════════════════════════════════════╝
+echo  +----------------------------------------------------------+
+echo  ^|       WHISPER PORTABLE - Transcripcion por Lotes        ^|
+echo  ^|       Procesa todos los audios de la carpeta "input"    ^|
+echo  +----------------------------------------------------------+
 echo.
 
 set "SCRIPT_DIR=%~dp0"
@@ -48,19 +48,19 @@ echo  Modelo:  %WHISPER_MODEL%
 echo  Idioma:  %WHISPER_LANGUAGE%
 echo  Salida:  carpeta "output"
 echo.
-echo  ════════════════════════════════════════════════════════════
+echo  ============================================================
 
 set CURRENT=0
 for %%f in ("%INPUT_DIR%\*.mp3" "%INPUT_DIR%\*.wav" "%INPUT_DIR%\*.m4a" "%INPUT_DIR%\*.ogg" "%INPUT_DIR%\*.flac" "%INPUT_DIR%\*.wma" "%INPUT_DIR%\*.aac" "%INPUT_DIR%\*.mp4" "%INPUT_DIR%\*.mkv" "%INPUT_DIR%\*.avi" "%INPUT_DIR%\*.webm") do (
     set /a CURRENT+=1
     echo.
     echo  [!CURRENT!/%COUNT%] Procesando: %%~nxf
-    echo  ────────────────────────────────────────────────────────
+    echo  --------------------------------------------------------
     "%WHISPER_EXE%" "%%f" --model %WHISPER_MODEL% --output_format txt --output_dir "%OUTPUT_DIR%" --device %WHISPER_DEVICE% --compute_type %WHISPER_COMPUTE% %LANG_ARG%
 )
 
 echo.
-echo  ════════════════════════════════════════════════════════════
+echo  ============================================================
 echo  [OK] Procesamiento por lotes completado!
 echo  Resultados en: %OUTPUT_DIR%
 echo.
